@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TheSportsDb</string>
+    <string name="description_img_photo">Team Badge</string>
+    <string name="main_error_get">Conection error</string>
+    <string name="main_error_unkown">Unkown error</string>
+    <string name="description_img_stadium">Team stadium</string>
 </resources>

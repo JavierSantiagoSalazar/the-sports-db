@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="common_padding_middle">24dp</dimen>
+    <dimen name="margin_cut_tv">2dp</dimen>
+    <dimen name="item_badge_size">250dp</dimen>
+</resources>
