@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="max_lenght_tv_team_name">30</integer>
+    <integer name="max_lines_simpletv">1</integer>
+    <integer name="details_maxlines_description">9</integer>
+    <integer name="max_lenght_tv_match_name">30</integer>
+    <integer name="max_lenght_tv_date">12</integer>
+    <integer name="max_lenght_tv_match_time">10</integer>
+    <integer name="max_lenght_tv_stadium_match">15</integer>
+    <integer name="max_lenght_tv_webpage">18</integer>
+    <integer name="max_lenght_tv_pages">18</integer>
+    <integer name="max_lenght_tv_webpage_special">12</integer>
+</resources>

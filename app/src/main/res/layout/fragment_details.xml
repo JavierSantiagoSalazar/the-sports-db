@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".ui.detailsModule.DetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/imgBadge"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/common_padding_min"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:layout_marginEnd="@dimen/padding_mid_min"
+        android:contentDescription="@string/description_img_badge"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/imgJersey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgJersey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/common_padding_min"
+        android:layout_marginStart="@dimen/padding_mid_min"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:contentDescription="@string/description_img_jersey"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBadge"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clDataTeam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/common_padding_min"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:background="@color/secondaryDarkColor"
+        android:padding="@dimen/common_padding_min"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgBadge">
+
+        <TextView
+            android:id="@+id/tvTeamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_default"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="@integer/max_lenght_tv_team_name"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="FB Barcelona" />
+
+        <TextView
+            android:id="@+id/tvFoundation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/tvTeamName"
+            app:layout_constraintTop_toBottomOf="@id/tvTeamName"
+            android:text="@string/tv_details_fundation_year" />
+
+        <TextView
+            android:id="@+id/tvFoundationYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="@integer/max_lenght_tv_team_name"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/tvFoundation"
+            app:layout_constraintTop_toTopOf="@id/tvFoundation"
+            tools:text="1997" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvTeamDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/common_padding_min"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:fadeScrollbars="false"
+        android:focusable="true"
+        android:maxLines="@integer/details_maxlines_description"
+        android:scrollbars="vertical"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/clDataTeam"
+        app:layout_constraintStart_toStartOf="@id/clDataTeam"
+        app:layout_constraintTop_toBottomOf="@id/clDataTeam"
+        tools:text="@string/example" />
+
+    <TextView
+        android:id="@+id/tvLastFiveMatches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:text="@string/tv_details_last_five_team_games"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/clDataTeam"
+        app:layout_constraintTop_toBottomOf="@id/tvTeamDescription" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:src="@drawable/ic_down_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/tvLastFiveMatches"
+        app:layout_constraintStart_toEndOf="@id/tvLastFiveMatches"
+        app:layout_constraintTop_toTopOf="@+id/tvLastFiveMatches" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMatches"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/clDataTeam"
+        app:layout_constraintStart_toStartOf="@id/clDataTeam"
+        app:layout_constraintTop_toBottomOf="@id/tvLastFiveMatches"
+        tools:listitem="@layout/item_matches" />
+
+    <TextView
+        android:id="@+id/tvWebPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:text="@string/tv_details_webpage"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/icFacebook"
+        app:layout_constraintStart_toStartOf="@id/recyclerMatches"
+        app:layout_constraintTop_toTopOf="@id/icFacebook" />
+
+
+    <TextView
+        android:id="@+id/tvTeamWebPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_mid_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_webpage_special"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icFacebook"
+        app:layout_constraintStart_toEndOf="@id/tvWebPage"
+        app:layout_constraintTop_toTopOf="@id/icFacebook"
+        tools:text="www.alaves.coms" />
+
+    <ImageView
+        android:id="@+id/icFacebook"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:contentDescription="@string/description_ic_fb"
+        android:maxLines="@integer/max_lines_simpletv"
+        app:layout_constraintEnd_toStartOf="@id/tvTeamFacebook"
+        app:layout_constraintTop_toBottomOf="@id/recyclerMatches"
+        app:srcCompat="@drawable/ic_facebook" />
+
+    <TextView
+        android:id="@+id/tvTeamFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_pages"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icFacebook"
+        app:layout_constraintEnd_toEndOf="@id/recyclerMatches"
+        app:layout_constraintTop_toTopOf="@id/icFacebook"
+        tools:text="www.facebook.com/deportivoalaves" />
+
+    <ImageView
+        android:id="@+id/icTwitter"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:contentDescription="@string/description_ic_fb"
+        app:layout_constraintStart_toStartOf="@id/tvWebPage"
+        app:layout_constraintTop_toTopOf="@id/icInstagram"
+        app:srcCompat="@drawable/ic_twitter" />
+
+    <TextView
+        android:id="@+id/tvTeamTwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_webpage"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icInstagram"
+        app:layout_constraintStart_toEndOf="@id/icTwitter"
+        app:layout_constraintTop_toTopOf="@id/icInstagram"
+        tools:text="www.facebook.com/deportivoalaves" />
+
+    <ImageView
+        android:id="@+id/icInstagram"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:contentDescription="@string/description_ic_fb"
+        app:layout_constraintStart_toStartOf="@id/icFacebook"
+        app:layout_constraintTop_toBottomOf="@id/icFacebook"
+        app:srcCompat="@drawable/ic_instagram" />
+
+    <TextView
+        android:id="@+id/tvTeamInstagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_pages"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icInstagram"
+        app:layout_constraintStart_toEndOf="@id/icInstagram"
+        app:layout_constraintTop_toTopOf="@id/icInstagram"
+        tools:text="www.facebook.com/deportivoalaves" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/bg_progressbar"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="@color/primaryColor"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/common_padding_default">
+
+        <ImageView
+            android:id="@+id/imgStadium"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/description_img_stadium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imgPhoto"
+            android:layout_width="@dimen/item_badge_size"
+            android:layout_height="@dimen/item_badge_size"
+            android:contentDescription="@string/description_img_badge"
+            app:layout_constraintBottom_toBottomOf="@id/imgStadium"
+            app:layout_constraintEnd_toEndOf="@id/imgStadium"
+            app:layout_constraintStart_toStartOf="@id/imgStadium"
+            app:layout_constraintTop_toTopOf="@id/imgStadium" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_marginBottom="@dimen/margin_cut_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white_t"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tvStadium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="FC Barcelona" />
+
+        <TextView
+            android:id="@+id/tvStadium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white_t"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Estadio Valderrama" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

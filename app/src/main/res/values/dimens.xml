@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="common_padding_middle">24dp</dimen>
+    <dimen name="margin_cut_tv">2dp</dimen>
+    <dimen name="item_badge_size">250dp</dimen>
+    <dimen name="padding_mid_min">4dp</dimen>
+    <dimen name="margin_start_instagram_icon">22dp</dimen>
+</resources>
