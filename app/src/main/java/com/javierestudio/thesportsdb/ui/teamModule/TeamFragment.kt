@@ -34,7 +34,7 @@ class TeamFragment : Fragment(), OnTeamClick {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "Por favor escoge la lista que desees ver", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), getString(R.string.initial_message), Toast.LENGTH_SHORT).show()
         setupViewModel()
         setupToggleGroup()
     }
