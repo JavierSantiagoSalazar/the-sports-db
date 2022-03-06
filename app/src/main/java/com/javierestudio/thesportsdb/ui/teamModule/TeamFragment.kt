@@ -34,11 +34,14 @@ class TeamFragment : Fragment(), OnTeamClick {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), getString(R.string.initial_message), Toast.LENGTH_SHORT).show()
+        showInitialMessage()
         setupViewModel()
         setupToggleGroup()
     }
 
+    private fun showInitialMessage() {
+        Toast.makeText(requireContext(), getString(R.string.initial_message), Toast.LENGTH_SHORT).show()
+    }
 
 
     private fun setupToggleGroup() {
