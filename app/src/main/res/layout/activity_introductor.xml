@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.teamModule.IntroductorActivity"
-    android:background="@color/secondaryLightColor">
+    android:background="@color/primaryLightColor">
 
     <TextView
         android:id="@+id/tvTittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/splash_tittle"
+        android:textColor="@color/white"
         android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@id/lottie"
@@ -25,9 +26,7 @@
         app:layout_constraintBottom_toTopOf="@+id/lottie"
         app:layout_constraintEnd_toEndOf="@id/lottie"
         app:layout_constraintStart_toStartOf="@id/lottie"
-        android:background="@color/primaryColor"/>
-
-
+        android:background="@color/white"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
@@ -40,7 +39,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
