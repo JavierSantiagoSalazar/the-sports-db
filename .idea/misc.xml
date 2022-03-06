@@ -6,12 +6,18 @@
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1925" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/bg_progressbar.xml" value="0.212" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/bg_secondary_rounded.xml" value="0.212" />
+        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/ic_facebook.xml" value="0.162" />
+        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/ic_instagram.xml" value="0.162" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/ic_twiiter_log.xml" value="0.162" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/scrollbar_color.xml" value="0.1" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/drawable/track.xml" value="0.212" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/activity_introductor.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/activity_team.xml" value="0.2429718875502008" />
+        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/activity_team.xml" value="0.1092896174863388" />
+        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/fragment_details.xml" value="0.25" />
+        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/fragment_team.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/item_matches.xml" value="0.33" />
         <entry key="..\:/Users/Javier Santiago/Documents/the-sports-db/app/src/main/res/layout/item_team.xml" value="0.25" />
       </map>
     </option>

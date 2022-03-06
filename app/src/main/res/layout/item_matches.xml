@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_marginBottom="@dimen/common_padding_min"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/common_padding_min">
+
+        <TextView
+            android:id="@+id/tvNameMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="@integer/max_lenght_tv_match_name"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Alaves vs Sevillaaaaaaaaaaaaaaaaa" />
+
+        <ImageView
+            android:id="@+id/imgTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_mid_min"
+            android:background="@drawable/ic_time"
+            android:contentDescription="@string/time_img"
+            app:layout_constraintStart_toStartOf="@id/tvNameMatch"
+            app:layout_constraintTop_toBottomOf="@id/tvNameMatch" />
+
+        <TextView
+            android:id="@+id/tvDateAndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/imgTime"
+            app:layout_constraintStart_toEndOf="@id/imgTime"
+            app:layout_constraintTop_toTopOf="@id/imgTime"
+            android:text="@string/tv_details_date"/>
+
+        <TextView
+            android:id="@+id/tvDateMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_mid_min"
+            android:gravity="center"
+            android:maxLength="@integer/max_lenght_tv_date"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tvDateAndTime"
+            app:layout_constraintStart_toEndOf="@id/tvDateAndTime"
+            app:layout_constraintTop_toTopOf="@id/tvDateAndTime"
+            tools:text="2022-03-04" />
+
+        <TextView
+            android:id="@+id/tvBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/padding_mid_min"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tvDateMatch"
+            app:layout_constraintStart_toEndOf="@id/tvDateMatch"
+            app:layout_constraintTop_toTopOf="@id/tvDateMatch"
+            android:text="@string/tv_details_bar"/>
+
+        <TextView
+            android:id="@+id/tvTimeMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/padding_mid_min"
+            android:maxLength="@integer/max_lenght_tv_match_time"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tvBar"
+            app:layout_constraintStart_toEndOf="@id/tvBar"
+            app:layout_constraintTop_toTopOf="@id/tvBar"
+            tools:text="20:00:00" />
+
+        <TextView
+            android:id="@+id/tvStadiumDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvDateAndTime"
+            app:layout_constraintStart_toStartOf="@id/tvDateAndTime"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            android:text="@string/details_tv_match_stadium"/>
+
+        <TextView
+            android:id="@+id/tvStadiumMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/padding_mid_min"
+            android:maxLength="@integer/max_lenght_tv_stadium_match"
+            android:maxLines="@integer/max_lines_simpletv"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/black"
+            app:layout_goneMarginStart="@dimen/padding_mid_min"
+            app:layout_constraintBottom_toBottomOf="@id/tvStadiumDetail"
+            app:layout_constraintStart_toEndOf="@id/tvStadiumDetail"
+            app:layout_constraintTop_toTopOf="@id/tvStadiumDetail"
+            tools:text="Estadio Zabala" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:background="@color/color_divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,8 +1,8 @@
 package com.javierestudio.thesportsdb.framework.di
 
-import com.javierestudio.core.data.TeamsRemoteDataSource
-import com.javierestudio.core.data.TeamsRepositoryImpl
-import com.javierestudio.core.domain.league.repository.TeamsRepository
+import com.javierestudio.thesportsdb.core.data.teams.TeamsRemoteDataSource
+import com.javierestudio.thesportsdb.core.data.teams.TeamsRepositoryImpl
+import com.javierestudio.thesportsdb.core.domain.league.repository.TeamsRepository
 import com.javierestudio.thesportsdb.framework.network.datasource.TeamsRemoteDataSourceImpl
 import com.javierestudio.thesportsdb.framework.network.services.APIService
 import dagger.Module
@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 
 @Module
 @InstallIn(SingletonComponent::class)
-class TeamModel {
+class TeamModule {
     @Provides
     fun provideRepository(remoteDataSource: TeamsRemoteDataSource): TeamsRepository =
         TeamsRepositoryImpl(remoteDataSource)

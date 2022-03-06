@@ -1,4 +1,4 @@
-package com.javierestudio.thesportsdb.framework.network.models
+package com.javierestudio.thesportsdb.framework.network.models.teams
 
 import com.google.gson.annotations.SerializedName
 

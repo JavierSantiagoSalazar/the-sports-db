@@ -1,4 +1,4 @@
-package com.javierestudio.thesportsdb.ui.teamModule
+package com.javierestudio.thesportsdb.ui.detailsModule
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,29 +6,28 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.javierestudio.appsosafe.framework.utils.DataException
 import com.javierestudio.appsosafe.framework.utils.TypeError
-import com.javierestudio.thesportsdb.core.domain.league.model.Team
-import com.javierestudio.thesportsdb.core.domain.league.usecases.GetTeams
+import com.javierestudio.thesportsdb.core.domain.matches.model.Matches
+import com.javierestudio.thesportsdb.core.domain.matches.usecases.GetMatches
 import com.javierestudio.thesportsdb.framework.utils.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class TeamViewModel @Inject constructor(private val getTeams: GetTeams) : ViewModel() {
-
-    private val _teamsResponse = MutableLiveData<List<Team>>()
+class DetailsViewModel @Inject constructor(private val getMatches: GetMatches): ViewModel() {
+    private val _matchesResponse = MutableLiveData<List<Matches>>()
     private val _isVisible = MutableLiveData<Boolean>()
     private val _typeError: MutableLiveData<TypeError> = MutableLiveData()
 
-    val teamsResponse: LiveData<List<Team>> get() = _teamsResponse
-    val isVisible:  LiveData<Boolean> get() = _isVisible
-    val typeError:  LiveData<TypeError> get() = _typeError
+    val matchesResponse: LiveData<List<Matches>> get() = _matchesResponse
+    val isVisible: LiveData<Boolean> get() = _isVisible
+    val typeError: LiveData<TypeError> get() = _typeError
 
-    fun getAllTeams() {
+    fun getAllMatches(teamId: Int){
         viewModelScope.launch {
             _isVisible.value = Constants.SHOW
             try {
-                _teamsResponse.value = getTeams()
+                _matchesResponse.value = getMatches(teamId)
             } catch (e: DataException) {
                 _typeError.value = e.typeError
             } finally {

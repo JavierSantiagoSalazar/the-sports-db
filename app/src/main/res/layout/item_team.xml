@@ -28,7 +28,7 @@
             android:id="@+id/imgPhoto"
             android:layout_width="@dimen/item_badge_size"
             android:layout_height="@dimen/item_badge_size"
-            android:contentDescription="@string/description_img_photo"
+            android:contentDescription="@string/description_img_badge"
             app:layout_constraintBottom_toBottomOf="@id/imgStadium"
             app:layout_constraintEnd_toEndOf="@id/imgStadium"
             app:layout_constraintStart_toStartOf="@id/imgStadium"

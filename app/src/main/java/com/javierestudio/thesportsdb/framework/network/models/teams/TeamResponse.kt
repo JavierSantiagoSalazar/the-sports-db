@@ -1,7 +1,7 @@
-package com.javierestudio.thesportsdb.framework.network.models
+package com.javierestudio.thesportsdb.framework.network.models.teams
 
 import com.google.gson.annotations.SerializedName
-import com.javierestudio.core.domain.league.model.Team
+import com.javierestudio.thesportsdb.core.domain.league.model.Team
 
 data class TeamResponse(
 
@@ -36,3 +36,4 @@ data class TeamResponse(
         strInstagram = strInstagram
     )
 }
+
