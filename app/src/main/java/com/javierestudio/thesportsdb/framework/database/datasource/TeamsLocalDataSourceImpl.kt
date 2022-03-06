@@ -1,6 +1,5 @@
 package com.javierestudio.thesportsdb.framework.database.datasource
 
-import androidx.lifecycle.map
 import com.javierestudio.thesportsdb.core.data.teams.TeamsLocalDataSource
 import com.javierestudio.thesportsdb.core.domain.league.model.Team
 import com.javierestudio.thesportsdb.framework.database.daos.TeamDao

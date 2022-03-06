@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.javierestudio.appsosafe.framework.utils.DataException
-import com.javierestudio.appsosafe.framework.utils.TypeError
+import com.javierestudio.thesportsdb.framework.utils.DataException
+import com.javierestudio.thesportsdb.framework.utils.TypeError
 import com.javierestudio.thesportsdb.core.domain.matches.model.Matches
 import com.javierestudio.thesportsdb.core.domain.matches.usecases.GetMatches
 import com.javierestudio.thesportsdb.framework.utils.Constants
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DetailsViewModel @Inject constructor(private val getMatches: GetMatches): ViewModel() {
+class DetailsViewModel @Inject constructor(private val getMatches: GetMatches) : ViewModel() {
     private val _matchesResponse = MutableLiveData<List<Matches>>()
     private val _isVisible = MutableLiveData<Boolean>()
     private val _typeError: MutableLiveData<TypeError> = MutableLiveData()
@@ -23,7 +23,7 @@ class DetailsViewModel @Inject constructor(private val getMatches: GetMatches): 
     val isVisible: LiveData<Boolean> get() = _isVisible
     val typeError: LiveData<TypeError> get() = _typeError
 
-    fun getAllMatches(teamId: Int){
+    fun getAllMatches(teamId: Int) {
         viewModelScope.launch {
             _isVisible.value = Constants.SHOW
             try {

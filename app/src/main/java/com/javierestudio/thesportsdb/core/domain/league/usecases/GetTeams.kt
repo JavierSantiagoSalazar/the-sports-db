@@ -5,5 +5,5 @@ import com.javierestudio.thesportsdb.core.domain.league.repository.TeamsReposito
 import javax.inject.Inject
 
 class GetTeams @Inject constructor(private val teamsRepository: TeamsRepository) {
-    suspend operator fun invoke(): List<Team> = teamsRepository.getTeams()
+    suspend operator fun invoke(league: Int): List<Team> = teamsRepository.getTeams(league)
 }

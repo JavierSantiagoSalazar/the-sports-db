@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TheSportsDb"
 include ':app'
-include ':core'
