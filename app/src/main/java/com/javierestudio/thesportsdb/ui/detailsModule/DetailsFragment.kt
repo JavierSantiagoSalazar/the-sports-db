@@ -1,5 +1,7 @@
 package com.javierestudio.thesportsdb.ui.detailsModule
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.text.method.ScrollingMovementMethod
@@ -43,12 +45,27 @@ class DetailsFragment : Fragment() {
 
     private fun setupLinks() {
         with(mBinding){
-            tvTeamWebPage.movementMethod = LinkMovementMethod.getInstance()
-            tvTeamFacebook.movementMethod = LinkMovementMethod.getInstance()
-            tvTeamInstagram.movementMethod = LinkMovementMethod.getInstance()
-            tvTeamTwitter.movementMethod = LinkMovementMethod.getInstance()
+            tvTeamWebPage.setOnClickListener { openWebPage() }
+            tvTeamFacebook.setOnClickListener { openFacebook() }
+            tvTeamTwitter.setOnClickListener { openTwitter() }
+            tvTeamInstagram.setOnClickListener { openInstagram() }
         }
     }
+
+    private fun openLink(link: String) {
+        var url = link
+        if (!link.contains("http", true)) {
+            url = "http://$link"
+        }
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
+    }
+
+    private fun openWebPage() = openLink(mBinding.tvTeamWebPage.text.toString())
+    private fun openFacebook() = openLink(mBinding.tvTeamFacebook.text.toString())
+    private fun openTwitter() = openLink(mBinding.tvTeamTwitter.text.toString())
+    private fun openInstagram() = openLink(mBinding.tvTeamInstagram.text.toString())
 
     private fun setupTeamData() {
         with(mBinding){
@@ -62,7 +79,7 @@ class DetailsFragment : Fragment() {
             tvTeamTwitter.text = args.team.strTwitter?: getString(R.string.no_web_data)
             tvTeamInstagram.text = args.team.strInstagram?: getString(R.string.no_web_data)
             imgBadge.loadImageFromUrl(args.team.strTeamBadge)
-            imgJersey.loadImageFromUrlc(args.team.strTeamJersey)
+            imgJersey.loadImageFromUrl(args.team.strTeamJersey)
         }
     }
 

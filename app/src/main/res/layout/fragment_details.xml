@@ -15,7 +15,6 @@
         android:layout_marginVertical="@dimen/common_padding_min"
         android:layout_marginStart="@dimen/common_padding_min"
         android:layout_marginEnd="@dimen/padding_mid_min"
-        android:background="@android:color/darker_gray"
         android:contentDescription="@string/description_img_badge"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/imgJersey"
@@ -29,7 +28,6 @@
         android:layout_marginVertical="@dimen/common_padding_min"
         android:layout_marginStart="@dimen/padding_mid_min"
         android:layout_marginEnd="@dimen/common_padding_min"
-        android:background="@android:color/darker_gray"
         android:contentDescription="@string/description_img_jersey"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,11 +97,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/common_padding_min"
         android:layout_marginTop="@dimen/common_padding_min"
+        android:clickable="true"
         android:ellipsize="end"
         android:fadeScrollbars="false"
-        android:maxLines="@integer/details_maxlines_description"
-        android:clickable="true"
         android:focusable="true"
+        android:maxLines="@integer/details_maxlines_description"
         android:scrollbars="vertical"
         android:textAppearance="?attr/textAppearanceBody2"
         android:textColor="@color/white"
@@ -151,125 +149,124 @@
         app:layout_constraintTop_toBottomOf="@id/tvLastFiveMatches"
         tools:listitem="@layout/item_matches" />
 
-
-    <LinearLayout
-        android:id="@+id/liPages"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/tvWebPage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/common_padding_default"
-        android:layout_marginTop="@dimen/common_padding_min"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@id/recyclerMatches"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:text="@string/tv_details_webpage"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/icFacebook"
         app:layout_constraintStart_toStartOf="@id/recyclerMatches"
-        app:layout_constraintTop_toBottomOf="@id/recyclerMatches">
-
-        <TextView
-            android:id="@+id/tvWebPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:maxLines="@integer/max_lines_simpletv"
-            android:text="@string/tv_details_webpage"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textColor="@color/white" />
+        app:layout_constraintTop_toTopOf="@id/icFacebook" />
 
 
-        <TextView
-            android:id="@+id/tvTeamWebPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/padding_mid_min"
-            android:clickable="true"
-            android:ellipsize="end"
-            android:focusable="true"
-            android:gravity="center"
-            android:maxLength="@integer/max_lenght_tv_webpage"
-            android:maxLines="@integer/max_lines_simpletv"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textColor="@android:color/holo_blue_light"
-            tools:text="www.alaves.coms" />
-
-        <ImageView
-            android:id="@+id/icFacebook"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:contentDescription="@string/description_ic_fb"
-            app:srcCompat="@drawable/ic_facebook" />
-
-        <TextView
-            android:id="@+id/tvTeamFacebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/padding_mid_min"
-            android:clickable="true"
-            android:ellipsize="end"
-            android:focusable="true"
-            android:gravity="center"
-            android:maxLength="@integer/max_lenght_tv_pages"
-            android:maxLines="@integer/max_lines_simpletv"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textColor="@android:color/holo_blue_light"
-            tools:text="www.facebook.com/deportivoalaves" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/tvTeamWebPage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/common_padding_default"
+        android:layout_marginStart="@dimen/padding_mid_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_webpage_special"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icFacebook"
+        app:layout_constraintStart_toEndOf="@id/tvWebPage"
+        app:layout_constraintTop_toTopOf="@id/icFacebook"
+        tools:text="www.alaves.coms" />
+
+    <ImageView
+        android:id="@+id/icFacebook"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="@dimen/common_padding_min"
         android:layout_marginTop="@dimen/common_padding_min"
-        android:orientation="horizontal"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:contentDescription="@string/description_ic_fb"
+        android:maxLines="@integer/max_lines_simpletv"
+        app:layout_constraintEnd_toStartOf="@id/tvTeamFacebook"
+        app:layout_constraintTop_toBottomOf="@id/recyclerMatches"
+        app:srcCompat="@drawable/ic_facebook" />
+
+    <TextView
+        android:id="@+id/tvTeamFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_pages"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icFacebook"
         app:layout_constraintEnd_toEndOf="@id/recyclerMatches"
-        app:layout_constraintStart_toStartOf="@id/recyclerMatches"
-        app:layout_constraintTop_toBottomOf="@id/liPages">
+        app:layout_constraintTop_toTopOf="@id/icFacebook"
+        tools:text="www.facebook.com/deportivoalaves" />
 
-        <ImageView
-            android:id="@+id/icTwitter"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:contentDescription="@string/description_ic_fb"
-            app:srcCompat="@drawable/ic_twitter" />
+    <ImageView
+        android:id="@+id/icTwitter"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:contentDescription="@string/description_ic_fb"
+        app:layout_constraintStart_toStartOf="@id/tvWebPage"
+        app:layout_constraintTop_toTopOf="@id/icInstagram"
+        app:srcCompat="@drawable/ic_twitter" />
 
-        <TextView
-            android:id="@+id/tvTeamTwitter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/padding_mid_min"
-            android:clickable="true"
-            android:ellipsize="end"
-            android:focusable="true"
-            android:gravity="center"
-            android:maxLength="@integer/max_lenght_tv_pages"
-            android:maxLines="@integer/max_lines_simpletv"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textColor="@android:color/holo_blue_light"
-            tools:text="www.facebook.com/deportivoalaves" />
+    <TextView
+        android:id="@+id/tvTeamTwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_webpage"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icInstagram"
+        app:layout_constraintStart_toEndOf="@id/icTwitter"
+        app:layout_constraintTop_toTopOf="@id/icInstagram"
+        tools:text="www.facebook.com/deportivoalaves" />
 
-        <ImageView
-            android:id="@+id/icInstagram"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="@dimen/margin_start_instagram_icon"
-            android:contentDescription="@string/description_ic_fb"
-            app:srcCompat="@drawable/ic_instagram" />
+    <ImageView
+        android:id="@+id/icInstagram"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:contentDescription="@string/description_ic_fb"
+        app:layout_constraintStart_toStartOf="@id/icFacebook"
+        app:layout_constraintTop_toBottomOf="@id/icFacebook"
+        app:srcCompat="@drawable/ic_instagram" />
 
-        <TextView
-            android:id="@+id/tvTeamInstagram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/padding_mid_min"
-            android:clickable="true"
-            android:ellipsize="end"
-            android:focusable="true"
-            android:gravity="center"
-            android:maxLength="@integer/max_lenght_tv_pages"
-            android:maxLines="@integer/max_lines_simpletv"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textColor="@android:color/holo_blue_light"
-            tools:text="www.facebook.com/deportivoalaves" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvTeamInstagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLength="@integer/max_lenght_tv_pages"
+        android:maxLines="@integer/max_lines_simpletv"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/icInstagram"
+        app:layout_constraintStart_toEndOf="@id/icInstagram"
+        app:layout_constraintTop_toTopOf="@id/icInstagram"
+        tools:text="www.facebook.com/deportivoalaves" />
 
     <ProgressBar
         android:id="@+id/progressBar"

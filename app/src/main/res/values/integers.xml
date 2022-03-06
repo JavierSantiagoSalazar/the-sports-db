@@ -9,4 +9,5 @@
     <integer name="max_lenght_tv_stadium_match">15</integer>
     <integer name="max_lenght_tv_webpage">18</integer>
     <integer name="max_lenght_tv_pages">18</integer>
+    <integer name="max_lenght_tv_webpage_special">12</integer>
 </resources>
