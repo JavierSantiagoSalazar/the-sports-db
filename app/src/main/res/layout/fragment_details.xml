@@ -72,7 +72,7 @@
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@id/tvTeamName"
             app:layout_constraintTop_toBottomOf="@id/tvTeamName"
-            tools:text="Foundation year: " />
+            android:text="@string/tv_details_fundation_year" />
 
         <TextView
             android:id="@+id/tvFoundationYear"

@@ -1,19 +1,16 @@
 package com.javierestudio.thesportsdb.core.data.teams
 
-import com.javierestudio.appsosafe.framework.utils.DataException
-import com.javierestudio.appsosafe.framework.utils.TypeError
+import com.javierestudio.thesportsdb.framework.utils.DataException
 import com.javierestudio.thesportsdb.core.domain.league.model.Team
 import com.javierestudio.thesportsdb.core.domain.league.repository.TeamsRepository
-import com.javierestudio.thesportsdb.core.domain.league.usecases.GetTeams
-import java.lang.Exception
 
 class TeamsRepositoryImpl(
     private val remoteDataSource: TeamsRemoteDataSource,
     private val localDataSource: TeamsLocalDataSource,
 ) : TeamsRepository {
-    override suspend fun getTeams(): List<Team> {
+    override suspend fun getTeams(league: Int): List<Team> {
         return try {
-            val teams = remoteDataSource.getTeams()
+            val teams = remoteDataSource.getTeams(league)
             localDataSource.saveTeams(teams)
             teams
         } catch (e: DataException){

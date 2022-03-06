@@ -3,7 +3,6 @@ package com.javierestudio.thesportsdb.ui.detailsModule
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.text.method.ScrollingMovementMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,8 +11,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
-import com.javierestudio.appsosafe.framework.utils.TypeError
-import com.javierestudio.thesportsdb.core.domain.league.model.Team
+import com.javierestudio.thesportsdb.framework.utils.TypeError
 import com.javierestudio.thesportsdb.core.domain.matches.model.Matches
 import com.javierestudio.thesportsdb.R
 import com.javierestudio.thesportsdb.databinding.FragmentDetailsBinding
@@ -44,7 +42,7 @@ class DetailsFragment : Fragment() {
     }
 
     private fun setupLinks() {
-        with(mBinding){
+        with(mBinding) {
             tvTeamWebPage.setOnClickListener { openWebPage() }
             tvTeamFacebook.setOnClickListener { openFacebook() }
             tvTeamTwitter.setOnClickListener { openTwitter() }
@@ -68,16 +66,15 @@ class DetailsFragment : Fragment() {
     private fun openInstagram() = openLink(mBinding.tvTeamInstagram.text.toString())
 
     private fun setupTeamData() {
-        with(mBinding){
+        with(mBinding) {
             tvTeamDescription.movementMethod = ScrollingMovementMethod()
-
             tvTeamName.text = args.team.strTeam
             tvFoundationYear.text = args.team.intFormedYear
             tvTeamDescription.text = args.team.strDescriptionEn
-            tvTeamWebPage.text = args.team.strWebsite?: getString(R.string.no_web_data)
-            tvTeamFacebook.text = args.team.strFacebook?: getString(R.string.no_web_data)
-            tvTeamTwitter.text = args.team.strTwitter?: getString(R.string.no_web_data)
-            tvTeamInstagram.text = args.team.strInstagram?: getString(R.string.no_web_data)
+            tvTeamWebPage.text = args.team.strWebsite ?: getString(R.string.no_web_data)
+            tvTeamFacebook.text = args.team.strFacebook ?: getString(R.string.no_web_data)
+            tvTeamTwitter.text = args.team.strTwitter ?: getString(R.string.no_web_data)
+            tvTeamInstagram.text = args.team.strInstagram ?: getString(R.string.no_web_data)
             imgBadge.loadImageFromUrl(args.team.strTeamBadge)
             imgJersey.loadImageFromUrl(args.team.strTeamJersey)
         }
@@ -114,7 +111,7 @@ class DetailsFragment : Fragment() {
     private fun showError(typeError: TypeError) {
         val msgRes = when (typeError) {
             TypeError.GET -> getString(R.string.main_error_get)
-            else -> getString(R.string.main_error_unkown)
+            else -> getString(R.string.main_error_unknown)
         }
         Snackbar.make(mBinding.root, msgRes, Snackbar.LENGTH_SHORT).show()
     }

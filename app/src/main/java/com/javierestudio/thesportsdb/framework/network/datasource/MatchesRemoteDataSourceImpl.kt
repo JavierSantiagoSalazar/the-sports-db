@@ -1,7 +1,7 @@
 package com.javierestudio.thesportsdb.framework.network.datasource
 
-import com.javierestudio.appsosafe.framework.utils.DataException
-import com.javierestudio.appsosafe.framework.utils.TypeError
+import com.javierestudio.thesportsdb.framework.utils.DataException
+import com.javierestudio.thesportsdb.framework.utils.TypeError
 import com.javierestudio.thesportsdb.core.data.matches.MatchesRemoteDataSource
 import com.javierestudio.thesportsdb.core.domain.matches.model.Matches
 import com.javierestudio.thesportsdb.framework.network.services.APIService

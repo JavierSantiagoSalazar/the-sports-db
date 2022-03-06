@@ -4,11 +4,10 @@ import com.google.gson.annotations.SerializedName
 import com.javierestudio.thesportsdb.core.domain.league.model.Team
 
 data class TeamResponse(
-
     @SerializedName("idTeam") var idTeam: Int,
     @SerializedName("strTeam") var strTeam: String,
     @SerializedName("strStadium") var strStadium: String,
-    @SerializedName("strStadiumThumb") var strStadiumThumb: String,
+    @SerializedName("strStadiumThumb") var strStadiumThumb: String?,
     @SerializedName("intStadiumCapacity") var intStadiumCapacity: Int,
     @SerializedName("strTeamBadge") var strTeamBadge: String,
     @SerializedName("strDescriptionEN") var strDescriptionEn: String,
@@ -18,13 +17,12 @@ data class TeamResponse(
     @SerializedName("strFacebook") var strFacebook: String,
     @SerializedName("strTwitter") var strTwitter: String,
     @SerializedName("strInstagram") var strInstagram: String
-
 ){
     fun mapToDomain(): Team = Team(
         idTeam = idTeam,
         strTeam = strTeam,
         strStadium = strStadium,
-        strStadiumThumb = strStadiumThumb,
+        strStadiumThumb = strStadiumThumb?:"",
         intStadiumCapacity = intStadiumCapacity,
         strTeamBadge = strTeamBadge,
         strDescriptionEn = strDescriptionEn,
