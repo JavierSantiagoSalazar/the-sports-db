@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TheSportsDb">
         <activity
-            android:name=".ui.teamModule.TeamActivity"
+            android:name=".IntroductorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.teamModule.TeamActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
